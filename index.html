@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solicitud de materiales gráficos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div>
+<h1>Solicitud de materiales gráficos</h1>
+<div class="subtitle">
+Completa la información necesaria para solicitar materiales publicitarios, promocionales o de comunicación.
+</div>
+</div>
+<img class="logo" src="LOGO+SLOGAN(NEGRO) (5).png" alt="Verenize">
+</div>
+
+<div class="form-card">
+
+<label>¿Para qué fecha necesitas el material? <span class="required">*</span></label>
+<input id="fechaNecesaria" type="date">
+<div class="info-box">
+Esta fecha corresponde al día en que necesitas tener el material listo para su entrega o publicación. Te recomendamos solicitarlo con la mayor anticipación posible para garantizar su desarrollo.
+</div>
+
+<label>Nombre del socio comercial <span class="required">*</span></label>
+<input id="socio" type="text">
+
+<label>Ciudad <span class="required">*</span></label>
+<input id="ciudad" type="text" placeholder="Ej. Hermosillo, Sonora">
+
+<label>Celular que aparecerá en la publicidad</label>
+<input id="celular" type="text" placeholder="Ej. 6621234567 / No aplica">
+
+<label>Tipo de material <span class="required">*</span></label>
+<select id="tipo" onchange="mostrarCampos()">
+<option value="">Selecciona una opción</option>
+<option value="Historia para redes">Historia para redes</option>
+<option value="Post para redes">Post para redes</option>
+<option value="Flyer de evento">Flyer de evento</option>
+<option value="Invitación / convocatoria">Invitación / convocatoria</option>
+<option value="Pendón publicitario">Pendón publicitario</option>
+<option value="Otro">Otro</option>
+</select>
+<div id="descripcionTipo" class="info-box hidden"></div>
+
+<label>Formato del material <span class="required">*</span></label>
+<select id="formato" onchange="mostrarCampos()">
+<option value="">Selecciona una opción</option>
+<option value="Digital">Digital</option>
+<option value="Impreso">Impreso</option>
+</select>
+<div id="descripcionFormato" class="info-box hidden"></div>
+
+<div id="camposMedidas" class="hidden">
+<label>Medidas del material <span class="required">*</span></label>
+<input id="medidas" type="text" placeholder="Ej. Carta, tabloide, 60x90 cm, 1x2 metros, etc.">
+<label>Tipo de hoja o material <span class="required">*</span></label>
+<input id="tipoMaterial" type="text" placeholder="Ej. Lona, papel opalina, couche, adhesivo, PVC, etc.">
+</div>
+
+<label>Objetivo del material <span class="required">*</span></label>
+<textarea id="objetivo" placeholder="Describe brevemente cómo será usado el material. Ej. Se imprimirá para evento, se publicará en historias, se usará como lona para evento, etc."></textarea>
+
+<div id="camposEvento" class="hidden event-box">
+
+<div id="camposPendon" class="hidden event-box">
+<h3>Información del pendón</h3>
+
+<label>Tipo de evento o campaña <span class="required">*</span></label>
+<select id="tipoPendon" onchange="mostrarOtroPendon()">
+<option value="">Selecciona una opción</option>
+<option value="Certificación">Certificación</option>
+<option value="Master Class">Master Class</option>
+<option value="Perfect Blonde">Perfect Blonde</option>
+<option value="Beauty Brunch">Beauty Brunch</option>
+<option value="Amamos los Rizos">Amamos los Rizos</option>
+<option value="Otro">Otro</option>
+</select>
+
+<div id="otroPendon" class="hidden">
+<label>Especifica el tipo de evento o campaña <span class="required">*</span></label>
+<input id="otroTipoPendon" type="text" placeholder="Ej. Expo Belleza, Lanzamiento, Congreso...">
+</div>
+
+<label>Texto que llevará el pendón <span class="required">*</span></label>
+<textarea id="textoPendon" placeholder="Ej. Certificación Internacional Verenize"></textarea>
+</div>
+
+<h3>Datos del evento</h3>
+<label>Nombre del evento</label>
+<input id="evento" type="text" placeholder="Ej. Amamos los rizos">
+
+<div id="datosEvento">
+<label>Nombre del técnico</label>
+<input id="tecnico" type="text" placeholder="Ej. Técnico profesional Ana Pérez">
+<label>Fecha del evento</label>
+<input id="fechaEvento" type="date">
+<label>Hora del evento</label>
+<input id="horaEvento" type="time">
+<label>Dirección completa</label>
+<input id="direccion" type="text" placeholder="Calle, número, colonia, ciudad">
+</div>
+</div>
+
+<label>Especificaciones adicionales del diseño</label>
+<textarea id="notas" placeholder="Colores, estilo, referencias, restricciones, comentarios, etc."></textarea>
+
+<button onclick="enviarWhatsapp()">Enviar solicitud por WhatsApp</button>
+<div class="note">
+Antes de enviar, revisa que los datos estén completos y escritos correctamente.
+</div>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
