@@ -124,38 +124,38 @@ function enviarWhatsapp(){
   }
 
   let mensaje = "Hola, quiero solicitar un material gráfico:%0A%0A";
-  mensaje += `Fecha requerida: ${fechaNecesaria}%0A`;
-  mensaje += `Socio comercial: ${socio}%0A`;
-  mensaje += `Ciudad: ${ciudad}%0A`;
-  mensaje += `Celular para publicidad: ${celular || "No aplica / no desea mostrar celular"}%0A`;
-  mensaje += `Tipo de material: ${tipo}%0A`;
-  mensaje += `Formato del material: ${formato}%0A`;
+  mensaje += `*Fecha requerida:* ${fechaNecesaria}%0A`;
+  mensaje += `*Socio comercial:* ${socio}%0A`;
+  mensaje += `*Ciudad:* ${ciudad}%0A`;
+  mensaje += `*Celular para publicidad:* ${celular || "No aplica / no desea mostrar celular"}%0A`;
+  mensaje += `*Tipo de material:* ${tipo}%0A`;
+  mensaje += `*Formato del material:* ${formato}%0A`;
 
   if(formato === "Impreso" || tipo === "Pendón publicitario" || tipo === "Otro"){
-    mensaje += `Medidas: ${medidas}%0A`;
-    mensaje += `Tipo de hoja/material: ${tipoMaterial}%0A`;
+    mensaje += `*Medidas:* ${medidas}%0A`;
+    mensaje += `*Tipo de hoja/material:* ${tipoMaterial}%0A`;
   }
 
-  mensaje += `%0AObjetivo del material:%0A${objetivo}%0A%0A`;
+  mensaje += `%0A*Objetivo del material:*%0A${objetivo}%0A%0A`;
 
   if(tipo === "Pendón publicitario"){
-    mensaje += "Información del pendón:%0A";
-    mensaje += `Tipo de evento o campaña: ${tipoPendon === "Otro" ? otroTipoPendon : tipoPendon}%0A`;
-    mensaje += `Texto del pendón: ${textoPendon}%0A`;
+    mensaje += "*Información del pendón:*%0A";
+    mensaje += `*Tipo de evento o campaña:* ${tipoPendon === "Otro" ? otroTipoPendon : tipoPendon}%0A`;
+    mensaje += `*Texto del pendón:* ${textoPendon}%0A`;
     if(evento){
-      mensaje += `Nombre del evento: ${evento}%0A`;
+      mensaje += `*Nombre del evento:* ${evento}%0A`;
     }
     mensaje += "%0A";
   }else if(tipo === "Flyer de evento" || tipo === "Invitación / convocatoria"){
-    mensaje += "Datos del evento:%0A";
-    mensaje += `Nombre del evento: ${evento}%0A`;
-    mensaje += `Técnico: ${tecnico}%0A`;
-    mensaje += `Fecha: ${fechaEvento}%0A`;
-    mensaje += `Hora: ${horaEvento}%0A`;
-    mensaje += `Dirección completa: ${direccion}%0A%0A`;
+    mensaje += "*Datos del evento:*%0A";
+    mensaje += `*Nombre del evento:* ${evento}%0A`;
+    mensaje += `*Técnico:* ${tecnico}%0A`;
+    mensaje += `*Fecha:* ${fechaEvento}%0A`;
+    mensaje += `*Hora:* ${horaEvento}%0A`;
+    mensaje += `*Dirección completa:* ${direccion}%0A%0A`;
   }
 
-  mensaje += `Especificaciones adicionales:%0A${notas || "Sin especificaciones adicionales"}`;
+  mensaje += `*Especificaciones adicionales:*%0A${notas || "Sin especificaciones adicionales"}`;
 
   window.open(`https://wa.me/${whatsapp}?text=${mensaje}`, "_blank");
 }
