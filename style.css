@@ -44,6 +44,53 @@ padding:40px;
 border-radius:24px;
 box-shadow:0 15px 35px rgba(51,49,50,.08);
 }
+
+/* --- Secciones del formulario --- */
+.form-section{
+padding:28px 0;
+border-bottom:1px solid #E7E3DD;
+}
+.form-section:first-child{
+padding-top:0;
+}
+.form-section:last-of-type{
+border-bottom:none;
+padding-bottom:8px;
+}
+.section-header{
+display:flex;
+align-items:flex-start;
+gap:16px;
+margin-bottom:6px;
+}
+.section-number{
+flex:0 0 auto;
+width:34px;
+height:34px;
+border-radius:50%;
+background:#333132;
+color:white;
+font-weight:700;
+font-size:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.section-title{
+margin:0;
+font-size:22px;
+font-weight:700;
+color:#333132;
+}
+.section-desc{
+margin:4px 0 0;
+font-size:14px;
+color:#707070;
+}
+.section-body{
+margin-left:50px;
+}
+
 label{
 display:block;
 font-size:16px;
@@ -95,6 +142,9 @@ background:#FAF8F6;
 border:1px solid #CDA787;
 border-radius:16px;
 }
+.event-box + .event-box{
+margin-top:22px;
+}
 .event-box h3{
 margin-top:0;
 color:#333132;
@@ -143,5 +193,11 @@ padding:20px;
 button{
 font-size:16px;
 padding:16px;
+}
+.section-body{
+margin-left:0;
+}
+.section-header{
+gap:12px;
 }
 }
