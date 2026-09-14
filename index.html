@@ -110,10 +110,40 @@ Completa la información necesaria para solicitar materiales publicitarios, prom
     </div>
   </section>
 
-  <!-- SECCIÓN 4: DATOS DEL EVENTO / PENDÓN (condicional) -->
-  <section id="camposEvento" class="form-section hidden">
+  <!-- SECCIÓN 4: ESTILO Y REFERENCIAS VISUALES -->
+  <section class="form-section">
     <div class="section-header">
       <span class="section-number">4</span>
+      <div>
+        <h2 class="section-title">Estilo y referencias visuales</h2>
+        <p class="section-desc">Cómo debe verse el material y si ya tienes una idea de referencia.</p>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <label>¿Qué estilo debe ser? <span class="required">*</span></label>
+      <select id="estilo" onchange="mostrarOtroEstilo()">
+        <option value="">Selecciona una opción</option>
+        <option value="Ejecutivo">Ejecutivo</option>
+        <option value="Comercial">Comercial</option>
+        <option value="Público en general">Público en general</option>
+        <option value="Otro">Otro</option>
+      </select>
+      <div id="otroEstilo" class="hidden">
+        <label>Especifica el estilo <span class="required">*</span></label>
+        <input id="otroTipoEstilo" type="text" placeholder="Ej. Elegante, juvenil, minimalista...">
+      </div>
+
+      <label>Referencias visuales</label>
+      <textarea id="referencias" placeholder="Si ya tienes una idea, describe el estilo o pega el link de una imagen de referencia. También puedes enviar la imagen directamente en este mismo chat de WhatsApp."></textarea>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: DATOS DEL EVENTO / PENDÓN (condicional) -->
+  <section id="camposEvento" class="form-section hidden">
+    <div class="section-header">
+      <span class="section-number">5</span>
       <div>
         <h2 class="section-title">Datos del evento</h2>
         <p class="section-desc">Solo se muestra cuando el tipo de material lo requiere.</p>
@@ -164,13 +194,13 @@ Completa la información necesaria para solicitar materiales publicitarios, prom
     </div>
   </section>
 
-  <!-- SECCIÓN 5: ESPECIFICACIONES ADICIONALES -->
+  <!-- SECCIÓN 6: ESPECIFICACIONES ADICIONALES -->
   <section class="form-section">
     <div class="section-header">
-      <span class="section-number">5</span>
+      <span class="section-number">6</span>
       <div>
         <h2 class="section-title">Especificaciones adicionales</h2>
-        <p class="section-desc">Colores, estilo, referencias visuales o cualquier otro comentario para el diseñador.</p>
+        <p class="section-desc">Colores, restricciones o cualquier otro comentario para el diseñador.</p>
       </div>
     </div>
     <div class="section-body">
