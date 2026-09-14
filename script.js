@@ -68,6 +68,16 @@ function mostrarCampos(){
   }
 }
 
+function mostrarOtroEstilo(){
+  const estilo = document.getElementById("estilo").value;
+  const otroEstilo = document.getElementById("otroEstilo");
+  if(estilo === "Otro"){
+    otroEstilo.classList.remove("hidden");
+  }else{
+    otroEstilo.classList.add("hidden");
+  }
+}
+
 function mostrarOtroPendon(){
   const tipoPendon = document.getElementById("tipoPendon").value;
   const otroPendon = document.getElementById("otroPendon");
@@ -97,9 +107,17 @@ function enviarWhatsapp(){
   const tipoPendon = document.getElementById("tipoPendon").value;
   const otroTipoPendon = document.getElementById("otroTipoPendon").value.trim();
   const textoPendon = document.getElementById("textoPendon").value.trim();
+  const estilo = document.getElementById("estilo").value;
+  const otroTipoEstilo = document.getElementById("otroTipoEstilo").value.trim();
+  const referencias = document.getElementById("referencias").value.trim();
 
-  if(!fechaNecesaria || !socio || !ciudad || !tipo || !formato || !objetivo){
+  if(!fechaNecesaria || !socio || !ciudad || !tipo || !formato || !objetivo || !estilo){
     alert("Por favor completa todos los campos obligatorios marcados con *.");
+    return;
+  }
+
+  if(estilo === "Otro" && !otroTipoEstilo){
+    alert("Por favor especifica el estilo del material.");
     return;
   }
 
@@ -137,6 +155,9 @@ function enviarWhatsapp(){
   }
 
   mensaje += `%0A*Objetivo del material:*%0A${objetivo}%0A%0A`;
+
+  mensaje += `*Estilo:* ${estilo === "Otro" ? otroTipoEstilo : estilo}%0A`;
+  mensaje += `*Referencias visuales:* ${referencias || "Sin referencias / se enviarán en este chat"}%0A%0A`;
 
   if(tipo === "Pendón publicitario"){
     mensaje += "*Información del pendón:*%0A";
